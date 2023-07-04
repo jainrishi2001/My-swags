@@ -166,14 +166,14 @@ body {
   letter-spacing: 2px;
 }
 
-/* @media (max-width: 600px) {
-.container .box:hover .content {
+@media (max-width: 600px) {
+.container-fluid .box:hover .content {
     transform: translate(0, 3.5rem);
   }
-.container .box:hover .imgBox {
+.container-fluid .box:hover .imgBox {
     transform: translate(0, -3.5rem);
   }
-} */
+}
 
 .footer {
     /* background-image: linear-gradient(to right, black , grey); */
