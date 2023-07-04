@@ -1,149 +1,34 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+//jshint esversion:6
 
-<head>
-  <meta charset="utf-8">
-  <title>My Swags</title>
-  <link rel="icon" href="public/images/favicon.ico">
-  <meta charset="utf-8">
-   <!-- Favicon -->
-   <link rel="icon" href="/images/favicon.ico">
-   <meta charset="utf-8">
- 
-   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-   <script src="/js/carousel.js"></script>
- 
-   <!-- Bootstrap -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
- 
- 
-   <!-- Stylesheets -->
-   <link rel="stylesheet" href="/css/styles.css" type="text/css">
-   <link rel="stylesheet" href="/css/infinite-slider.css" type="text/css">
- 
-  <!-- Google Fonts -> -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Dancing+Script:wght@700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
- 
-   <!-- Font-Awesome -->
-   <script src="https://kit.fontawesome.com/0ee23bd8a8.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <!-------------------------- Nav-Bar or Header ---------------------------------------->
-    <section>
-      <nav class="navbar navbar-default navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <p class="navbar-brand" style="color: white; font-size: 30px; padding-top: 35px;"><i class="fa-solid fa-shirt" style="color: #cacad8;"></i> SWAGS COLLECTION</p>
-          </div>
-            <ul class="nav navbar-nav navbar-right">
-              <!-- 6 -->
-              <li id="home"><a href="/" style="color: white; font-size: 20px; padding-top: 35px;">HOME</a></li>
-              <li id="about"><a href="/" style="color: white; font-size: 20px; padding-top: 35px;">ABOUT US</a></li>
-              <li id="contact"><a href="/" style="color: white; font-size: 20px; padding-top: 35px;">CONTACT US</a></li>
-            </ul>
-        </div>
-      </nav>
-    </section>
-   
+const express = require("express");
+const bodyParser = require("body-parser");
+const ejs = require("ejs");
+const _ = require("lodash");
+const request = require("request");
+const https = require("https");
+const mongoose = require("mongoose");
 
-<!-- ----------------------------------Body of content------------------------ -->
-<section id="intro-row">
-  <div class="intro-head">
-    <h2 class="inside-heading">See my collection</h2>
-    
-    <p class="head-content"><img id="heading-img" src="/public/images/sammy.jpg" alt="Random merch" >
-       Want to see all the merch that I collected in my college life?</p>
-    <button type="button" class="btn btn-danger btn-lg">Explore All</button>
-  </div>
-  <!-- <h2>What is this website</h2>
-  <p> I wanted to build a project which was my own creation so thought of this idea and started working on this to learn and practice my skills.</p>
-  <h3>What will you find in this website?</h3>
-  <p> While exploring my website you can see all the merch that I have ever received, whether it be T-shirts, hoodies, stickers, pins etc. You will find it all here.</p> -->
-    
-</section>  
+const app = express();
+
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + "/public"));
+
+// mongoose.connect("mongodb://localhost:27017/<DB Name>", {useNewUrlParser:true});
 
 
-<div style="background-color: #F8E8EE;">
-  <h4 class="inside-heading products" id="brandshave">Brands I Have</h4>
-<div class="container-s" style="margin-top: 50px; height: 300px;">
-  <section class="customer-logos slider" style="position: relative; margin-top: 100px;">
-    <div class="slide"><a href="https://codingblocks.com/"><img src="public/images/cb.png"></a></div>
-    <div class="slide"><a href="https://kotlinlang.org/"><img src="public/images/kotlin.png"></a></div>
-    <div class="slide"><a href="https://reskilll.com/"><img src="public/images/reskill.png"></a></div>
-    <div class="slide"><a href="https://aws.amazon.com/"><img src="public/images/aws.png"></a></div>
-    <div class="slide"><a href="https://nhost.io/"><img src="public/images/nhost.png"></a></div>
-    <div class="slide"><a href="https://www.digitalocean.com/"><img src="public/images/do.png" style="filter:brightness(1.2)"></a></div>
-    <div class="slide"><a href="https://www.reclaimprotocol.org/"><img src="public/images/reclaim.png"></a></div>
-    <div class="slide"><a href="https://cloud.google.com/"><img src="public/images/gcp.png"></a></div>
-    <div class="slide"><a href="https://flow.com/"><img src="public/images/flow.png"></a></div>
-    <div class="slide"><a href="https://www.hackerearth.com/"><img src="public/images/hackerearth.png" style="filter:brightness(1.6)"></a></div>
-    <div class="slide"><a href="https://www.postman.com/"><img src="public/images/postman.png"></a></div>
-    <div class="slide"><a href="https://www.binance.com/en-IN/bnb"><img src="public/images/bnb.png"></a></div>
-  </section>
-  </div>
-</div>
+app.get("/",function(req,res){
+    res.render("home");
+  });
 
- 
+app.get("/allswags",function(req,res){
+  res.render("swags")
+});
 
-  
+app.get("/about",function(req,res){
+  res.render("about")
+});
 
-      
-<!---------------------- All the Sample cards on Display ----------------------------------->
- <section id = "all-cards">
-  <h4 class="inside-heading products">Products</h4>
-  <div class="container-i">
-    <div class="box">
-        <div class="imgBox">
-            <img src="public/images/merch.png" alt="random">
-        </div>
-        <div class="content">
-            <h2>Postman Student Leader Hoodie</br>
-            <span>Received in the Leader Kit in June of 2022</span></h2>
-        </div>
-    </div>
-    <div class="box">
-      <div class="imgBox">
-          <img src="public/images/merch.png" alt="Merch">
-      </div>
-      <div class="content">
-          <h2>Nhost T-shirt</br>
-          <span>Awesome Blue coloured tshirt</span></h2>
-      </div>
-  </div>
-  <div class="box">
-    <div class="imgBox">
-        <img src="public/images/merch.png" alt="Random merch">
-    </div>
-    <div class="content">
-        <h2>Digital Ocean Kubernetes T-shirt</br>
-        <span>A royal blue T-shirt with Sammy</span></h2>
-    </div>
-  </div>
-    </div>
-  <p class="more"><a href="/">Show All Swags!</a></p>
-  
-
- </section>
-      
-
-    <!---------------------------------- Footer --------------------------------------------->
-  <section id="foot">
-      <div class="footer">
-        <img src="/public/images/swag.jpg" alt="swag-logo" style="height: 100px; width: 100px; margin: 30px 40px 40px 670px">
-        
-          <p> Copyright © Rishi Jain</p>
-          <p>Connect with me on: </p>
-          <div id="socials">
-            <p><a href="https://twitter.com/Jain_1Rishi"><i class="fa-brands fa-twitter" style="color: #005af5;"></i></a></p>
-            <p><a href="https://github.com/jainrishi2001"><i class="fa-brands fa-github"></i></a></p>
-            <p><a href="https://www.instagram.com/__.rishi.jain.__/"><i class="fa-brands fa-instagram"></i></a></p>
-          </div>
-         
-      </div>
-  </section>
-    
-  </body>
-  </html>
+app.listen(3000, function() {
+    console.log("Server started on port 3000");
+  });
