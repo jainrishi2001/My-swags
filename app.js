@@ -14,7 +14,41 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 
-// mongoose.connect("mongodb://localhost:27017/<DB Name>", {useNewUrlParser:true});
+
+// Database
+mongoose.connect("mongodb://localhost:27017/SwagsDB", {useNewUrlParser:true});
+
+const swagsSchema = {
+  name: String,
+  description: String
+};
+
+const Swag = mongoose.model("Swag",swagsSchema);
+
+// First entry into the schema
+// const flowIndia = new Swag({
+//   name: "Flow India",
+//   description: "T-shirt received through giveaway by Flow Blockchain with the awesome design behind and printed with the words 'Build, Code, Flow'. "
+// });
+
+// flowIndia.save();
+
+app.get("/allswags/:swagName", async function(req,res){
+  const swagName = req.params.swagName;
+  var findSwag = async function (s){
+    return await Swag.findOne({name: s});
+  };
+  const foundSwag = await findSwag(swagName);
+
+  if(foundSwag){
+    res.render("products",{});
+    // console.log("Yayyyy!");
+  }else {
+    res.send("Sorry the page you requested doesn't exist");
+  };
+
+});
+
 
 
 app.get("/",function(req,res){
@@ -32,6 +66,8 @@ app.get("/about",function(req,res){
 app.get("/products", function(req,res){
   res.render("products")
 });
+
+
 
 
 
