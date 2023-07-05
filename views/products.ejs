@@ -1,0 +1,57 @@
+<%- include('partials/header'); -%>
+
+<div class="container">
+    <div class="left-column">
+        <img src="/images/ts.jpeg" alt="hackerearth" class="active" data-image="blue">
+        <img src="/images/ts1.jpeg" alt="hackerearth" data-image="yellow">
+        <img src="/images/ts2.jpeg" alt="hackerearth" data-image="black">
+    </div>
+
+    <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+            <span>Tshirt</span>
+            <h1>Digital Ocean</h1>
+            <p>The Kubernetes Tshirt with Sammy, the mascot of DO holding the Kubernetes wheel.</p>
+        </div>
+
+        <!-- Product photos -->
+        <div class="product-photos">
+            <span>All Photos</span>
+
+            <div class="photo-choose">
+                <div>
+                    <input data-image="blue" type="radio" value="blue" name="angles" id="blue" checked>
+                    <label for="blue"><span><img class="angles-img" src="/images/ts.jpeg"></span></label>
+                </div>
+                <div>
+                    <input data-image="yellow" type="radio" value="yellow" name="angles" id="yellow">
+                    <label for="yellow"><span><img class="angles-img" src="/images/ts1.jpeg"></span></label>
+                </div>
+                <div>
+                    <input data-image="black" type="radio" value="black" name="angles" id="black">
+                    <label for="black"><span><img class="angles-img" src="/images/ts2.jpeg"></span></label>
+                </div>
+            </div>
+        </div>
+
+
+
+         <!-- Product Pricing -->
+    <!-- <div class="product-price">
+        <span>$148</span>
+    </div> -->
+
+
+
+    </div>
+</div>
+
+
+      	
+
+
+
+
+<%- include('partials/footer'); -%>
