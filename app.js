@@ -16,10 +16,10 @@ app.use(express.static(__dirname + "/public"));
 
 
 // Database
-mongoose.connect("mongodb://localhost:27017/SwagsDB", {useNewUrlParser:true});
-
+mongoose.connect("mongodb://localhost:27017/SwagsDB", {useNewUrlParser:true});  //You can also use your own DB name instead of SwagsDB that you want to create
 const swagsSchema = {
   name: String,
+  title: String,
   description: String
 };
 
@@ -27,21 +27,22 @@ const Swag = mongoose.model("Swag",swagsSchema);
 
 // First entry into the schema
 // const flowIndia = new Swag({
-//   name: "Flow India",
+//   name: "flow-india",
+//   title: "Flow India Tshirt",
 //   description: "T-shirt received through giveaway by Flow Blockchain with the awesome design behind and printed with the words 'Build, Code, Flow'. "
 // });
 
 // flowIndia.save();
 
 app.get("/allswags/:swagName", async function(req,res){
-  const swagName = req.params.swagName;
+  const swagName = _.kebabCase(req.params.swagName);
   var findSwag = async function (s){
     return await Swag.findOne({name: s});
   };
   const foundSwag = await findSwag(swagName);
 
   if(foundSwag){
-    res.render("products",{});
+    res.render("products",{title: foundSwag.title, description: foundSwag.description});
     // console.log("Yayyyy!");
   }else {
     res.send("Sorry the page you requested doesn't exist");
