@@ -16,8 +16,7 @@ app.use(express.static(__dirname + "/public"));
 
 
 // Database
-mongoose.connect("mongodb://localhost:27017/SwagsDB", {useNewUrlParser:true});
-
+mongoose.connect("mongodb://localhost:27017/SwagsDB", {useNewUrlParser:true});  //You can also use your own DB name instead of SwagsDB that you want to create
 const swagsSchema = {
   name: String,
   description: String

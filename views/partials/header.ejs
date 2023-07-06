@@ -33,19 +33,36 @@
   </head>
   <body>
     <!-------------------------- Nav-Bar or Header ---------------------------------------->
-
-      <nav class="navbar navbar-expand-lg navigation" style="margin-bottom: 0; border: 0;">
-        <div class="container">
-          <div class="navbar-header">
-            <p class="navbar-brand" style="color: white; font-size: 30px; padding-top: 35px;"><i class="fa-solid fa-shirt" style="color: #cacad8;"></i> SWAGS COLLECTION</p>
-          </div>
+      <div class="container-fluid" style="padding: 0; border-right:solid 20px #39375B;">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href=""><i class="fa-solid fa-shirt" style="color: #cacad8;"></i> SWAGS COLLECTION</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div><ul class="nav navbar-nav navbar-right" style="display: inline;">
-              <li id="home nav-item" style="display: inline; text-decoration: none; margin-right: 50px;"><a href="/" style="color: white; font-size: 20px; padding-top: 35px; text-decoration:none;">HOME</a></li>
-              <li id="about nav-item" style="display: inline; margin-right: 50px;"><a href="/about" style="color: white; font-size: 20px; padding-top: 35px; text-decoration:none;">ABOUT</a></li>
-              <li id="contact nav-item" style="display: inline; margin-right: 50px;"><a href="/allswags" style="color: white; font-size: 20px; padding-top: 35px; text-decoration:none;">SWAGS</a></li>
-            </ul></div>
-            
-        </div>
-      </nav>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/" id="home" style="color: white; font-size: 20px">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about" id="about" style="color: white; font-size: 20px">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/allswags" id="swags" style="color: white; font-size: 20px">SWAGS</a>
+              </li>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
    
