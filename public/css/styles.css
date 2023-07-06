@@ -8,15 +8,14 @@ body {
     height: 100px;
 }
 
-#title {
+/* #title {
   display: flex;
   align-content: center;
   width: 100%;
-  /* height: 7.0625rem; */
   background-color: #176b87;
   text-align: left;
   font-family: "Montserrat", sans-serif;
-}
+} */
 
 a.navbar-brand {
   font-size: 30px;
@@ -105,7 +104,7 @@ a.navbar-brand {
   box-sizing: border-box;
 }
 
-.container-fluid .products {
+.container-fluid.products {
   position: relative;
   display: flex;
   justify-content: space-around;
@@ -163,6 +162,8 @@ a.navbar-brand {
   text-align: center;
   transition: 0.5s ease-in-out;
   background-color: #F2C9E1;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 10px;
 }
 
 .content h2 {
@@ -178,7 +179,7 @@ a.navbar-brand {
   color: #39375B;
   font-size: 1.4rem;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 600px) {
@@ -190,44 +191,24 @@ a.navbar-brand {
   }
 }
 
-.footer {
+.container-fluid .footer {
     /* background-image: linear-gradient(to right, black , grey); */
     height: 200px;
     border-top:solid 2px brown;
     background-color: #39375B;
-
-}
-
-.footer > p {
     margin-bottom: 0;
-    position: relative;
-    padding-left: 45%;
-    font-size: 16px;
-    text-align: justify;
-    /* background-image: linear-gradient(to right, black , grey); */
-    background-color: #39375B;
-    color: whitesmoke;
+   
+}
+.container-fluid.footers {
+  padding-left: 0;
+  padding-right: 0;
+  border-right: solid 30px #39375B;
+  border-left: solid 5px #39375B;
 }
 
-#socials p {
-    display: inline;
-    font-size: 32px;
-    margin-right: 50px;
-    color: whitesmoke;
-}
-
-#socials {
-    padding-bottom: 50px;
-    width: 100%;
-    padding-left: 44%;
-    /* background-image: linear-gradient(to right, black , grey); */
-    background-color: #39375B;
-    position: absolute;
-    
-}
-
-.connect {
-margin: 30px 40px 40px 650px;
+#copy {
+  color: whitesmoke;
+  font-size: 16px;
 }
 
 #brandshave {
