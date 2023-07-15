@@ -23,12 +23,13 @@ a.navbar-brand {
 }
 
 .intro-head {
-    background-color: #745C97;
+    background-color: #D7BBF5;
     height: 300px;
     width: 100%;
     padding-top: 10px;
     padding-left: 50px;
-    color: #fff;
+    color: black;
+    border: solid 2px black;
 }
 
 #all-cards {
@@ -47,6 +48,7 @@ a.navbar-brand {
 }
 
 .products {
+    
     font-size: 4em;
     text-align: left;
     margin: 0;
@@ -70,10 +72,6 @@ a.navbar-brand {
     margin-left: 919px;
     height : 300px;
     width: 320px;
-    /* padding-bottom:50px;
-    margin-bottom: 0px;
-    margin-right: 190px;
-    border-radius: 20px; */
     
 }
 
@@ -92,10 +90,32 @@ a.navbar-brand {
     border-radius: 20px;   
 }
 
-.more {
-    padding-top: 80px;
-    font-size: 25px;
-    text-align: center;
+.btn.all{
+  background: #6528F7;
+  background-image: -webkit-linear-gradient(top, #6528F7, #ac95f0);
+  background-image: -moz-linear-gradient(top, #6528F7, #ac95f0);
+  background-image: -ms-linear-gradient(top, #6528F7, #ac95f0);
+  background-image: -o-linear-gradient(top, #6528F7, #ac95f0);
+  background-image: linear-gradient(to bottom, #6528F7, #ac95f0);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin: 55px 150px 80px 650px;
+}
+
+.btn.all:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
 *::after,
 *::before {
@@ -119,7 +139,7 @@ a.navbar-brand {
   width: 25rem;
   height: 34rem;
   margin: 1rem;
-  background-color: #37E2D5;
+  background-color: #39375B;
 
 }
 
@@ -161,7 +181,7 @@ a.navbar-brand {
   align-items: flex-end;
   text-align: center;
   transition: 0.5s ease-in-out;
-  background-color: #F2C9E1;
+  background-color: #99DBF5;
   font-family: 'Quicksand', sans-serif;
   line-height: 10px;
 }
