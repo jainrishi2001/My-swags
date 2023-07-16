@@ -20,7 +20,9 @@ mongoose.connect("mongodb://localhost:27017/SwagsDB", {useNewUrlParser:true});  
 const swagsSchema = {
   name: String,
   title: String,
-  description: String
+  description: String,
+  bimage: String,
+  fimage: String
 };
 
 const Swag = mongoose.model("Swag",swagsSchema);
@@ -40,10 +42,8 @@ app.get("/allswags/:swagName", async function(req,res){
     return await Swag.findOne({name: s});
   };
   const foundSwag = await findSwag(swagName);
-
   if(foundSwag){
-    res.render("products",{title: foundSwag.title, description: foundSwag.description});
-    // console.log("Yayyyy!");
+    res.render("products",{title: foundSwag.title, description: foundSwag.description, fimage: foundSwag.fimage, bimage: foundSwag.bimage});
   }else {
     res.send("Sorry the page you requested doesn't exist");
   };
